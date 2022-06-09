@@ -1,0 +1,30 @@
+
+//先自增，然后获取自增后的结果
+public final int incrementAndGet() {
+        //+ 1 自增后的结果
+        //this 就表示当前的atomicInteger（值）
+        //1    自增一次
+        return U.getAndAddInt(this, VALUE, 1) + 1;
+}
+
+public final int getAndAddInt(Object o, long offset, int delta) {
+        //v 旧值
+        int v;
+        //自旋的过程
+        do {
+            //不断的获取旧值
+            v = getIntVolatile(o, offset);
+            //如果这个方法（ weakCompareAndSetInt(o, offset, v, v + delta) ）的返回值为false，那么继续自旋
+            //如果这个方法的返回值为true，那么自旋结束
+            //o 表示的就是内存值
+            //v 旧值
+            //v + delta 修改后的值
+        } while (!weakCompareAndSetInt(o, offset, v, v + delta));
+            //作用：比较内存中的值，旧值是否相等，如果相等就把修改后的值写到内存中，返回true。表示修改成功。
+            //                                 如果不相等，无法把修改后的值写到内存中，返回false。表示修改失败。
+            //如果修改失败，那么继续自旋。
+        return v;
+}
+
+
+
