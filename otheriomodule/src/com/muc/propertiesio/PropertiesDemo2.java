@@ -6,6 +6,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Properties;
 
+
+//Properties 继承于 Hashtable。表示一个持久的属性集，属性列表以key-value的形式存在，key和value都是字符串。
 public class PropertiesDemo2 {
     public static void main(String[] args) throws IOException {
         //void load(Reader reader)                     将本地文件中的键值对数据读取到集合中

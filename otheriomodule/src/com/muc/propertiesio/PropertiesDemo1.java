@@ -4,6 +4,8 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
+//Properties:表示一个持久的属性集,里面存储的键值对元素.属性列表中键和值都是一个String
+
 //map集合
 public class PropertiesDemo1 {
     public static void main(String[] args) {
