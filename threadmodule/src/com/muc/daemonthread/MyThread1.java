@@ -1,4 +1,4 @@
-package com.muc.threaddemo4;
+package com.muc.daemonthread;
 
 public class MyThread1 extends Thread {
 

@@ -1,4 +1,4 @@
-package com.muc.threaddemo4;
+package com.muc.daemonthread;
 
 public class MyThread2 extends Thread {
     @Override
