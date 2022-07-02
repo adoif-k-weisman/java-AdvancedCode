@@ -2,6 +2,7 @@
 .idea
 *.iml
 *.xml
+*.jpg
 out
 gen
 
